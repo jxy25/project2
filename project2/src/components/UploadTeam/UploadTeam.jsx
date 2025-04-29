@@ -10,11 +10,11 @@ const UploadTeam = ({ myTeam }) => {
     setError(null);
     setSuccess(false);
 
-    const airtableAPI = "https://api.airtable.com/v0/";
+    const airtableAPI = 
     const airtableKey =
-      "patmWToSWR6BlOwMi.0fb4fce25a93ad03d4e99c98bae7bd3175cddcf2c919094af9f297115e4266f4";
-    const baseId = "appBOMx2zGkQ9niPa";
-    const tableId = "tbltA5SNkyGMSYK26";
+     
+    const baseId = 
+    const tableId = 
 
     const records = myTeam.map((pokemon) => ({
       fields: {
