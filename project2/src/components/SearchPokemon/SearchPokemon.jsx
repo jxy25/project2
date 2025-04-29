@@ -1,9 +1,8 @@
 import React, { useState } from "react";
 
-const SearchPokemon = ({ data }) => {
+const SearchPokemon = ({ data, addToTeam }) => {
   const [search, setSearch] = useState("");
   const [selectedPokemon, setSelectedPokemon] = useState(null);
-  const [filteredPokemon, setFilteredPokemon] = useState([]);
   const [error, setError] = useState(null);
 
   const handleSearchChange = (e) => {
@@ -24,13 +23,8 @@ const SearchPokemon = ({ data }) => {
       setError("no pokemon found with that name");
     } else {
       setError(null);
-      setFilteredPokemon(searchResult);
       setSelectedPokemon(searchResult[0]);
     }
-  };
-
-  const handleSelectPokemon = (pokemon) => {
-    setSelectedPokemon(pokemon);
   };
 
   return (
@@ -47,16 +41,6 @@ const SearchPokemon = ({ data }) => {
 
       {error && <p>{error}</p>}
 
-      {filteredPokemon.length > 0 && !selectedPokemon && (
-        <ul>
-          {filteredPokemon.map((value) => (
-            <li key={pokemon.id} onClick={() => handleSelectPokemon(pokemon)}>
-              {pokemon.name}
-            </li>
-          ))}
-        </ul>
-      )}
-
       {selectedPokemon && (
         <div>
           <p>{selectedPokemon.name}</p>
@@ -70,6 +54,9 @@ const SearchPokemon = ({ data }) => {
           ) : (
             <p>no image</p>
           )}
+          <button onClick={() => addToTeam(selectedPokemon)}>
+            Add to team
+          </button>
         </div>
       )}
     </div>

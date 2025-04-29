@@ -8,24 +8,8 @@ const Display = ({
   handlePrevious,
   myTeam,
 }) => {
-  // const [currentIndex, setCurrentIndex] = useState(0);
-
-  // const handleNext = () => {
-  //   if (currentIndex < data.length - 1) {
-  //     setCurrentIndex(currentIndex + 1);
-  //   }
-  // };
-
-  // const handlePrevious = () => {
-  //   if (currentIndex > 0) {
-  //     setCurrentIndex(currentIndex - 1);
-  //   }
-  // };
-
-  // const currentPokemon = data[currentIndex];
-
   return (
-    <div>
+    <div className="display">
       <h1>Build your team!</h1>
       {currentPokemon ? (
         <div>
@@ -41,7 +25,7 @@ const Display = ({
             <p>no data available</p>
           )}
 
-          <div>
+          <div className="prevnext">
             <button
               onClick={handlePrevious}
               disabled={data.indexOf(currentPokemon) === 0}

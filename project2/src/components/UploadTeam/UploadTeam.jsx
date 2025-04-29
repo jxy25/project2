@@ -10,11 +10,9 @@ const UploadTeam = ({ myTeam }) => {
     setError(null);
     setSuccess(false);
 
-    const airtableAPI = "https://api.airtable.com/v0/";
-    const airtableKey =
-      "patmWToSWR6BlOwMi.0fb4fce25a93ad03d4e99c98bae7bd3175cddcf2c919094af9f297115e4266f4";
-    const baseId = "appBOMx2zGkQ9niPa";
-    const tableId = "tbltA5SNkyGMSYK26";
+    const airtableKey = import.meta.env.VITE_AIRTABLE_KEY;
+    const baseId = import.meta.env.VITE_AIRTABLE_BASEID;
+    const tableId = import.meta.env.VITE_AIRTABLE_TABLEID;
 
     const records = myTeam.map((pokemon) => ({
       fields: {
@@ -26,7 +24,7 @@ const UploadTeam = ({ myTeam }) => {
 
     try {
       const res = await fetch(
-        `https://api.airtable.com/v0/appBOMx2zGkQ9niPa/tbltA5SNkyGMSYK26`,
+        `https://api.airtable.com/v0/${baseId}/${tableId}`,
         {
           // const res = await fetch(airtableAPI, {
           method: "POST",
@@ -39,11 +37,15 @@ const UploadTeam = ({ myTeam }) => {
       );
 
       if (!res.ok) {
+        setError(err.message);
         console.log("error");
+        const errorData = await res.json();
+        throw new Error(errorData.error?.message || "upload failed");
       }
 
       setSuccess(true);
     } catch (err) {
+      setError(err.message);
       console.log("error");
     } finally {
       setLoading(false);
@@ -51,9 +53,12 @@ const UploadTeam = ({ myTeam }) => {
   };
 
   return (
-    <button onClick={upload} disabled={myTeam.length < 6}>
-      Save team loadout
-    </button>
+    <div>
+      <button onClick={upload} disabled={myTeam.length < 6}>
+        Save team loadout
+      </button>
+      {success && <div>Team upload success!</div>}
+    </div>
   );
 };
 

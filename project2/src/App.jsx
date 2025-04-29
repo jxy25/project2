@@ -106,9 +106,6 @@ const App = () => {
   return (
     <div>
       <NavBar />
-      {/* <h1>Build your team!</h1> */}
-      {/* <NavBar /> */}
-
       <Routes>
         <Route
           path="/"
