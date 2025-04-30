@@ -71,9 +71,9 @@ button:focus-visible {
   display: flex;
 }
 
-.display {
+/* .display {
   display: flex;
-}
+} */
 
 .loadout {
   display: flex;
