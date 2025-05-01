@@ -46,6 +46,10 @@ https://github.com/jxy25/project2
 
 API used: PokeAPI
 
+## Trello
+
+https://trello.com/b/kQKHmB1j/project2
+
 ## Stretch Goals
 
 Turn the Search function in the app to display on the main screen, rather than a separate image so it does not break immersion, and confuse users.
