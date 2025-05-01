@@ -1,6 +1,7 @@
 # Project 2 - Pokemon Team Creator
 
 ![Screenshot of App](/ScreenshotApp.png)
+![ScreenshotApp](https://github.com/user-attachments/assets/a0e67ea2-b7cd-4b28-a1f3-6d0dda95ae40)
 
 ###### Screenshot of App
 
