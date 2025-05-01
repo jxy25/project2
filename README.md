@@ -14,8 +14,6 @@ This React app would let you pick, search or generate a random Pokemon to add to
 
 ## Hierarchy of app
 
-![Uploading AppHierarchy.png…]()
-
 ![App Hierarchy](/AppHierarchy.png)
 
 **App** is the overall parent component. The following components are child components:
