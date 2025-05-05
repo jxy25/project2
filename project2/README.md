@@ -51,6 +51,14 @@ API used: PokeAPI
 
 https://trello.com/b/kQKHmB1j/project2
 
+## .env:
+
+VITE_AIRTABLE_KEY
+
+VITE_AIRTABLE_BASEID
+
+VITE_AIRTABLE_TABLEID
+
 ## Stretch Goals
 
 Turn the Search function in the app to display on the main screen, rather than a separate image so it does not break immersion, and confuse users.
